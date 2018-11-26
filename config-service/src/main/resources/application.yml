@@ -6,6 +6,6 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/piotrkosinski1992/spring-cloud-properties
-          search-paths: tomkos
+          uri: https://github.com/piotrkosinski1992/tomkos
+          search-paths: external-properties
           
