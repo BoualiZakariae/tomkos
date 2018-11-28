@@ -5,12 +5,14 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 import com.product.entity.CarEntity;
 import com.product.enums.Category;
 import com.product.repository.CarRepository;
 
 @EnableDiscoveryClient
+@EnableFeignClients
 @SpringBootApplication
 public class ProductServiceApplication implements CommandLineRunner {
 

@@ -27,6 +27,11 @@ public class CarController {
 		return carService.findAll();
 	}
 	
+	@GetMapping("/all/available")
+	public List<CarTO> getAllAvailableCars() {
+		return carService.getAllAvailable();
+	}
+	
 	@GetMapping("/model/{model}")
 	public List<CarTO> getByModel(@PathVariable String model) {
 		return carService.findByModel(model);

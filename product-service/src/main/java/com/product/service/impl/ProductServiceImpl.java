@@ -10,6 +10,7 @@ import com.product.entity.ProductEntity;
 import com.product.exceptions.WrongProductIdException;
 import com.product.repository.ProductRepository;
 import com.product.service.ProductService;
+import com.product.to.CarTO;
 import com.product.to.ProductTO;
 
 @Service
@@ -42,6 +43,12 @@ public class ProductServiceImpl implements ProductService<ProductTO> {
 		ProductEntity product = productRepository.findById(id).orElse(new ProductEntity());
 		
 		return new ProductTO(product);
+	}
+
+	@Override
+	public List<CarTO> getAllAvailable() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

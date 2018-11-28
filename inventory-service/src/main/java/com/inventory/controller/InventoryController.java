@@ -1,6 +1,8 @@
 package com.inventory.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,5 +26,10 @@ public class InventoryController {
 	@PostMapping("/return")
 	public boolean returnInventoryItem(@RequestBody InventoryItemTO inventoryItemTO) {
 		return inventoryService.returnInventoryItem(inventoryItemTO);
+	}
+	
+	@GetMapping("/available/{productId}")
+	boolean isProductAvailable(@PathVariable Long productId) {
+		return inventoryService.isProductAvailable(productId);
 	}
 }
