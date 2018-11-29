@@ -1,5 +1,5 @@
 package com.product.enums;
 
 public enum Category {
-	CAR,PHONE
+	CARS,PHONES,WATCHES,LAPTOPS,BACKPACKS
 }

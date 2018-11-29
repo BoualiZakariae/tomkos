@@ -1,7 +1,10 @@
 package com.product.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
@@ -15,11 +18,12 @@ import com.product.enums.Category;
 public class ProductEntity {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	private double price;
 	
+	@Enumerated(EnumType.STRING)
 	private Category category;
 	
 	private String brand;
@@ -28,10 +32,13 @@ public class ProductEntity {
 	
 	private double weight;
 	
+	private String picture;
+	
 	public ProductEntity() {
 	}
 
-	public ProductEntity(double price, Category category, String brand, String model, double weight) {
+	public ProductEntity(String picture, double price, Category category, String brand, String model, double weight) {
+		this.picture = picture;
 		this.price = price;
 		this.category = category;
 		this.brand = brand;
@@ -82,5 +89,12 @@ public class ProductEntity {
 	public void setWeight(double weight) {
 		this.weight = weight;
 	}
-	
+
+	public String getPicture() {
+		return picture;
+	}
+
+	public void setPicture(String picture) {
+		this.picture = picture;
+	}
 }

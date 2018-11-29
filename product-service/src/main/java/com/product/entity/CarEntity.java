@@ -16,9 +16,9 @@ public class CarEntity extends ProductEntity {
 	public CarEntity() {
 	}
 
-	public CarEntity(double price, Category category, String brand, String model, double weight, double maxSpeed,
+	public CarEntity(String picture, double price, Category category, String brand, String model, double weight, double maxSpeed,
 			int nrOfSeats) {
-		super(price, category, brand, model, weight);
+		super(picture, price, category, brand, model, weight);
 		this.maxSpeed = maxSpeed;
 		this.nrOfSeats = nrOfSeats;
 	}

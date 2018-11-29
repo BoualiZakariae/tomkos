@@ -9,10 +9,12 @@ import org.springframework.stereotype.Service;
 
 import com.product.communication.InventoryServiceCommunicator;
 import com.product.entity.CarEntity;
+import com.product.enums.Category;
 import com.product.exceptions.WrongProductIdException;
 import com.product.repository.CarRepository;
 import com.product.service.ProductService;
 import com.product.to.CarTO;
+import com.product.to.ProductTO;
 
 @Service
 public class CarServiceImpl implements ProductService<CarTO> {
@@ -57,6 +59,12 @@ public class CarServiceImpl implements ProductService<CarTO> {
 						   .map(car -> new CarTO(car))
 						   .filter(carTO -> inventoryServiceCommunicator.isProductAvailable(carTO.getId()))
 						   .collect(Collectors.toList());
+	}
+
+	@Override
+	public List<CarTO> findByCategory(String category) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	

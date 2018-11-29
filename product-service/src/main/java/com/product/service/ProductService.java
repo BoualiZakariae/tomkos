@@ -2,8 +2,6 @@ package com.product.service;
 
 import java.util.List;
 
-import com.product.to.CarTO;
-
 public interface ProductService<T> {
 
 	List<T> findAll();
@@ -12,5 +10,7 @@ public interface ProductService<T> {
 	
 	T findById(Long id);
 
-	List<CarTO> getAllAvailable();
+	List<T> getAllAvailable();
+
+	List<T> findByCategory(String category);
 }

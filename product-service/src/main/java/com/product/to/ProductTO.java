@@ -29,9 +29,14 @@ public class ProductTO {
 	@NotNull
 	@NotEmpty
 	private double weight;
+	
+	@NotNull
+	@NotEmpty
+	private String picture;
 
-	public ProductTO(Long id, double price, Category category,
+	public ProductTO(String picture, Long id, double price, Category category,
 			String brand,String model,double weight) {
+		this.picture = picture;
 		this.id = id;
 		this.price = price;
 		this.category = category;
@@ -41,6 +46,7 @@ public class ProductTO {
 	}
 	
 	public ProductTO(ProductEntity productEntity) {
+		this.picture = productEntity.getPicture();
 		this.id = productEntity.getId();
 		this.price = productEntity.getPrice();
 		this.category = productEntity.getCategory();
@@ -95,5 +101,13 @@ public class ProductTO {
 
 	public void setWeight(double weight) {
 		this.weight = weight;
+	}
+
+	public String getPicture() {
+		return picture;
+	}
+
+	public void setPicture(String picture) {
+		this.picture = picture;
 	}
 }
