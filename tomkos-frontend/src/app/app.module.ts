@@ -8,13 +8,17 @@ import { HttpClientModule }    from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CategoryListingComponent } from './components/category-listing/category-listing.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
+import { CartComponent } from './components/cart/cart.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
+    CartComponent,
     DashboardComponent,
     CategoryListingComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    
 
   ],
   imports: [

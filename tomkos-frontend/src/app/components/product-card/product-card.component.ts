@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Product } from 'src/app/model/product';
+import { ApiService } from 'src/app/service/api.service';
+import { Cartitem } from 'src/app/model/cartitem';
 
 @Component({
   selector: 'app-product-card',
@@ -10,12 +12,20 @@ export class ProductCardComponent implements OnInit {
 
   @Input('product') product : Product;
 
-  constructor() { }
+
+  constructor(private apiService : ApiService) { }
 
   ngOnInit() {
   }
 
-  showDeails() {
-    alert(this.product.id + "/" + this.product.picture + "/" + this.product.price);
+  addToCart(amount : number) {
+    
+    let cartItem = {
+      productId : this.product.id,
+      amount : amount
+    }
+     
+
+    this.apiService.addToCart(cartItem).subscribe();
   }
 }
